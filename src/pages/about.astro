@@ -1,0 +1,118 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="About | Titouan Olier" description="About Titouan Olier">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="About"
+				tagline="Thanks for stopping by. Read below to learn more about myself and my background."
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/at-work.jpg"
+					alt="Jeanine White at work with a colleague"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Background</h2>
+				<div class="content">
+					<p>
+						
+As a dedicated and results-oriented professional, I have gained valuable experience and expertise across various roles within the finance industry. During my tenure at Crédit Agricole Group in Paris, I served as a Portfolio Manager Assistant, where I utilized my proficiency in VBA and Python to conduct comprehensive portfolio analyses and produce insightful presentations. My role also involved designing portfolios, manipulating data, and monitoring performance to ensure alignment with targets. Additionally, my experience as a Research Analyst at SKEMA Finance club equipped me with advanced research and analytical skills, allowing me to identify key market trends and opportunities. Prior to this, I interned as a Risk Officer at Crédit Agricole Group in Aix-en-Provence, where I developed a keen understanding of operational, credit, and liquidity risks, and contributed to implementing effective control mechanisms. With a passion for finance and a commitment to excellence, I am eager to leverage my skills and experience to drive success in future endeavors.
+					</p>
+					<p>
+					
+					</p>
+					<p>
+						
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Education</h2>
+				<div class="content">
+					<p>During my pursuit of academic excellence, I completed my Master of Science in Financial Markets and Investments at SKEMA Business School in Paris. Throughout this program, I delved into various facets of finance, including trading automation, structured products, and derivative strategies. Notably, I undertook projects focused on generating trading signals and pricing structured products using VBA and Python, while my research explored the predictability of commodity futures returns through machine learning models.
+
+Prior to this, I earned a Master's degree in Financial Risk Management from Aix-Marseille University. Here, I deepened my knowledge in financial research, data science, and options pricing. My thesis involved analyzing the effectiveness of positive screening as a sustainable investment strategy, demonstrating my dedication to exploring innovative approaches in finance.
+
+Additionally, I broadened my academic horizons through an exchange program at CUNEF Universidad in Madrid, where I studied Fintech, machine learning, and business communication. This experience enriched my understanding of global financial markets and cultivated my leadership skills.
+
+Through these educational experiences, I have developed a comprehensive skill set and a passion for exploring the complexities of financial markets, equipped to contribute meaningfully to the finance industry.</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Skills</h2>
+				<div class="content">
+					<p>Proficient in English, with fluency in French and professional proficiency in Spanish. Possess a diverse set of IT skills including Excel, PowerPoint, Word, Python, R, Git, VBA, SQL, Bloomberg, and Reuters.</p>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
